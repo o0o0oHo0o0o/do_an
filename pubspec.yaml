@@ -1,0 +1,105 @@
+name: weather
+description: "Một dự án Flutter mới."
+# Dòng sau ngăn gói bị xuất bản nhầm lên pub.dev bằng cách sử dụng `flutter pub publish`.
+# Điều này được ưu tiên cho các gói riêng tư.
+publish_to: 'none' # Xóa dòng này nếu bạn muốn xuất bản lên pub.dev
+
+# Sau đây xác định phiên bản và số bản dựng cho ứng dụng của bạn.
+# Số phiên bản là ba số được phân tách bằng dấu chấm, như 1.2.43
+# theo sau là một số bản dựng tùy chọn được phân tách bằng dấu +.
+# Cả phiên bản và số bản dựng đều có thể bị ghi đè trong flutter
+# build bằng cách chỉ định --build-name và --build-number, tương ứng.
+# Trong Android, build-name được sử dụng làm versionName trong khi build-number được sử dụng làm versionCode.
+# Đọc thêm về định phiên bản Android tại https://developer.android.com/studio/publish/versioning
+# Trong iOS, build-name được sử dụng làm CFBundleShortVersionString trong khi build-number được sử dụng làm CFBundleVersion.
+# Đọc thêm về định phiên bản iOS tại
+# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+# Trong Windows, build-name được sử dụng làm các phần chính, phụ và bản vá
+# của các phiên bản sản phẩm và tệp trong khi build-number được sử dụng làm hậu tố bản dựng.
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.2.3 <4.0.0'
+
+# Các phụ thuộc chỉ định các gói khác mà gói của bạn cần để hoạt động.
+# Để tự động nâng cấp các phụ thuộc gói của bạn lên phiên bản mới nhất
+# hãy xem xét chạy `flutter pub upgrade --major-versions`. Ngoài ra,
+# các phụ thuộc có thể được cập nhật thủ công bằng cách thay đổi các số phiên bản bên dưới thành
+# phiên bản mới nhất có sẵn trên pub.dev. Để xem các phụ thuộc nào có phiên bản mới hơn,
+# chạy `flutter pub outdated`.
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Sau đây thêm phông chữ Cupertino Icons vào ứng dụng của bạn.
+  # Sử dụng với lớp CupertinoIcons cho các biểu tượng kiểu iOS.
+  cupertino_icons: ^1.0.2
+  http: any
+  intl: any
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # Gói "flutter_lints" bên dưới chứa một tập hợp các lint được đề xuất để
+  # khuyến khích thực hành mã hóa tốt. Tập hợp lint do gói cung cấp được
+  # kích hoạt trong tệp `analysis_options.yaml` nằm ở gốc của
+  # gói của bạn. Xem tệp đó để biết thông tin về việc hủy kích hoạt các quy tắc lint cụ thể
+  # và kích hoạt các quy tắc bổ sung.
+  flutter_lints: ^2.0.0
+  geolocator:
+  geocoding:
+  sleek_circular_slider:
+  http:
+  get:
+  flutter_spinkit:
+  cloud_firestore:
+  firebase_auth:
+  firebase_core:
+  firebase_storage:
+  provider:
+  image_picker:
+  page_view_indicators:
+# Để biết thông tin về phần Dart chung của tệp này, hãy xem
+# trang sau: https://dart.dev/tools/pub/pubspec
+
+# Phần sau là dành riêng cho các gói Flutter.
+flutter:
+
+  # Dòng sau đảm bảo rằng phông chữ Material Icons được
+  # bao gồm trong ứng dụng của bạn, vì vậy bạn có thể sử dụng các biểu tượng trong
+  # lớp material Icons.
+  uses-material-design: true
+
+  # Để thêm tài sản vào ứng dụng của bạn, hãy thêm một phần tài sản, như sau:
+  assets:
+    - assets/weather/
+    - assets/icon/
+    - assets/
+
+  #   - images/a_dot_ham.jpeg
+
+  # Một tài sản hình ảnh có thể tham chiếu đến một hoặc nhiều "biến thể" cụ thể về độ phân giải, xem
+  # https://flutter.dev/assets-and-images/#resolution-aware
+
+  # Để biết chi tiết về việc thêm tài sản từ các phụ thuộc gói, xem
+  # https://flutter.dev/assets-and-images/#from-packages
+
+  # Để thêm phông chữ tùy chỉnh vào ứng dụng của bạn, hãy thêm một phần phông chữ ở đây,
+  # trong phần "flutter" này. Mỗi mục trong danh sách này nên có một
+  # khóa "family" với tên gia đình phông chữ, và một khóa "fonts" với một
+  # danh sách cung cấp tài sản và các mô tả khác cho phông chữ. Ví dụ:
+  # fonts:
+  #   - family: Schyler
+  #     fonts:
+  #       - asset: fonts/Schyler-Regular.ttf
+  #       - asset: fonts/Schyler-Italic.ttf
+  #         style: italic
+  #   - family: Trajan Pro
+  #     fonts:
+  #       - asset: fonts/TrajanPro.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
+  #
+  # Để biết chi tiết về phông chữ từ các phụ thuộc gói,
+  # xem https://flutter.dev/custom-fonts/#from-packages
