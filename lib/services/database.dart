@@ -59,13 +59,12 @@ class DatabaseService {
   List<Mess> _messListFromSnapshot(QuerySnapshot snapshot) {
     return snapshot.docs.map((doc) {
       final data = doc.data() as Map<String, dynamic>?;
-      final timestamp = data?['createAt'] != null ? data!['createAt'] as Timestamp : Timestamp.now();
       return Mess(
         content: data?['content'] ?? '',
         health: data?['health'] ?? 0,
         outlay: data?['outlay'] ?? '',
         imageUrl: data?['imageUrl'] ?? '',
-        timestamp: timestamp,
+        timestamp: data?['createdAt'] ?? Timestamp.now(),
       );
     }).toList();
   }

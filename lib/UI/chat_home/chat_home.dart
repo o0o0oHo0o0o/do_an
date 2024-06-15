@@ -38,10 +38,9 @@ class ChatHome extends StatelessWidget {
       value: DatabaseService(uid: '').mess,
       initialData: [], // Empty list as initial data
       child: Scaffold(
-        backgroundColor: Colors.pink[50],
         appBar: AppBar(
-          title: Text('Chat box'),
-          backgroundColor: Colors.pink[200],
+          title: Text('Weather-chat', style: TextStyle(color: Colors.white),),
+          backgroundColor: myConstants.primaryColor.withOpacity(.75),
           elevation: 0.0,
           actions: [
             buildIconButton(onPressed: () => _showAddPanel(), icon: Icon(Icons.add_circle), content: 'Add mess'),
@@ -55,8 +54,8 @@ class ChatHome extends StatelessWidget {
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
               colors: [
-                myConstants.primaryColor ?? Colors.pink,
-                myConstants.secondaryColor ?? Colors.deepOrange,
+                myConstants.primaryColor.withOpacity(.4) ?? Colors.pink,
+                myConstants.secondaryColor.withOpacity(.3) ?? Colors.deepOrange,
               ],
             ),
           ),
